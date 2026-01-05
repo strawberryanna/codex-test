@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2026 Planning Studio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Plan your year</p>
+        <h1>2026 Planning Studio</h1>
+        <p class="subhead">
+          Capture your vision, set quarterly goals, and map out every month with clarity.
+          Everything saves automatically in your browser.
+        </p>
+      </div>
+      <div class="hero-actions">
+        <button class="btn" id="reset-plan">Reset</button>
+        <button class="btn primary" id="export-plan">Export</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="card">
+        <h2>Vision for 2026</h2>
+        <textarea id="vision" placeholder="Describe your overall intention for 2026..."></textarea>
+        <div class="field-row">
+          <label>
+            Theme word
+            <input id="theme" type="text" placeholder="e.g. Momentum" />
+          </label>
+          <label>
+            Success metric
+            <input id="metric" type="text" placeholder="e.g. Launch 3 products" />
+          </label>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <h2>Quarterly priorities</h2>
+          <button class="btn ghost" data-add="quarter">Add priority</button>
+        </div>
+        <div class="grid" id="quarterly-list"></div>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <h2>Monthly focus</h2>
+          <button class="btn ghost" data-add="month">Add month focus</button>
+        </div>
+        <div class="grid" id="monthly-list"></div>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <h2>Key dates & milestones</h2>
+          <button class="btn ghost" data-add="milestone">Add date</button>
+        </div>
+        <ul class="list" id="milestone-list"></ul>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <h2>Weekly habits</h2>
+          <button class="btn ghost" data-add="habit">Add habit</button>
+        </div>
+        <ul class="list" id="habit-list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>Reflection notes</h2>
+        <textarea id="notes" placeholder="Track lessons, celebrations, and adjustments..."></textarea>
+      </section>
+    </main>
+
+    <footer>
+      <p>Built for planning 2026. Your data stays in this browser only.</p>
+    </footer>
+
+    <template id="grid-item-template">
+      <div class="grid-item">
+        <input class="title" type="text" placeholder="Title" />
+        <textarea class="details" placeholder="Describe the focus"></textarea>
+        <button class="btn ghost remove">Remove</button>
+      </div>
+    </template>
+
+    <template id="list-item-template">
+      <li class="list-item">
+        <div>
+          <input class="title" type="text" placeholder="Title" />
+          <input class="details" type="text" placeholder="Details" />
+        </div>
+        <button class="btn ghost remove">Remove</button>
+      </li>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
